@@ -41,20 +41,20 @@
 	<title>견적 분석 도구 - 로그인</title>
 </svelte:head>
 
-<div class="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
-	<div class="card p-8 w-full max-w-md space-y-6">
+<div class="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
+	<div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md space-y-6">
 		<div class="text-center space-y-2">
 			<div class="text-6xl">🔐</div>
-			<h1 class="h1">견적 분석 도구</h1>
-			<p class="text-surface-600-300-token">바이브코딩 전용</p>
+			<h1 class="text-3xl font-bold text-gray-900">견적 분석 도구</h1>
+			<p class="text-gray-600">바이브코딩 전용</p>
 		</div>
 
 		<div class="space-y-4">
-			<label class="label">
-				<span>비밀번호</span>
+			<label class="block">
+				<span class="block text-sm font-medium text-gray-700 mb-1">비밀번호</span>
 				<input
 					type="password"
-					class="input"
+					class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
 					bind:value={password}
 					on:keypress={handleKeyPress}
 					placeholder="비밀번호를 입력하세요"
@@ -63,16 +63,14 @@
 			</label>
 
 			{#if error}
-				<aside class="alert variant-filled-error">
-					<div class="alert-message">
-						<p>{error}</p>
-					</div>
-				</aside>
+				<div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+					<p>{error}</p>
+				</div>
 			{/if}
 
 			<button
 				type="button"
-				class="btn variant-filled-primary w-full"
+				class="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
 				on:click={handleLogin}
 				disabled={loading || !password}
 			>
@@ -81,10 +79,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	:global(body) {
-		margin: 0;
-		padding: 0;
-	}
-</style>
