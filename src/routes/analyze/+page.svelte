@@ -91,7 +91,7 @@
 	<title>견적 분석 도구 - 분석</title>
 </svelte:head>
 
-<div class="min-h-screen overflow-y-auto bg-gray-50">
+<div class="min-h-screen bg-gray-50">
 	<div class="container mx-auto p-4 max-w-4xl space-y-6">
 		<!-- 헤더 -->
 		<div class="bg-white rounded-lg shadow p-4 flex justify-between items-center">
